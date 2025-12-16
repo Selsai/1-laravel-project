@@ -11,5 +11,5 @@ Route::get('/articles/{id}', [ArticleController::class, 'show'])
     ->name('article.details');
 
 Route::fallback(function () {
-    return response()->view('errors.not-found', [], 404);
+    return view('errors.not-found', [], 404);
 });
