@@ -3,7 +3,6 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
-use Illuminate\Support\Str;
 
 class Article extends Component
 {
