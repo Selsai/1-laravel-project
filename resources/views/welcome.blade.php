@@ -8,10 +8,6 @@
 
     <h2>Articles à la une</h2>
 
-    @php
-        use Illuminate\Support\Str;
-    @endphp
-
     @forelse ($articles as $article)
         @if ($loop->last)
             @break
@@ -19,7 +15,7 @@
 
         <x-article
             :title="$article['title']"
-            :description="Str::limit($article['description'], 30, '...')"
+            :description="$article['description']"
         />
     @empty
         <p>Aucun article à afficher.</p>
