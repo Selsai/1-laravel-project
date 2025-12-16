@@ -6,20 +6,14 @@
     <h2>Bienvenue sur la page d’accueil</h2>
     <p>Bienvenue sur le site de {{ $name }}</p>
 
-    <h2>Articles à la une</h2>
+      <h2>Articles à la une</h2>
 
-    <x-article
-        title="L’IA soigne mieux"
-        description="L’intelligence artificielle aide les médecins à diagnostiquer plus vite."
-    />
+    @forelse ($articles as $article)
+        <article class="article">
+            <h3>{{ $article['title'] }}</h3>
+            <p>{{ $article['description'] }}</p>
+        </article>
+    @empty
+        <p>Aucun article à afficher.</p>
+    @endforelse
 
-    <x-article
-        title="Villes vertes"
-        description="Les métropoles deviennent plus écologiques et durables."
-    />
-
-    <x-article
-        title="Télétravail"
-        description="Plus de liberté, mais aussi plus de solitude."
-    />
-@endsection
