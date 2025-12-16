@@ -9,6 +9,10 @@
     <h2>Articles à la une</h2>
 
     @forelse ($articles as $article)
+        @if ($loop->last)
+            @break
+        @endif
+
         <x-article
             :title="$article['title']"
             :description="$article['description']"
