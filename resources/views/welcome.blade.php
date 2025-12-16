@@ -6,14 +6,14 @@
     <h2>Bienvenue sur la page d’accueil</h2>
     <p>Bienvenue sur le site de {{ $name }}</p>
 
-      <h2>Articles à la une</h2>
+    <h2>Articles à la une</h2>
 
     @forelse ($articles as $article)
-        <article class="article">
-            <h3>{{ $article['title'] }}</h3>
-            <p>{{ $article['description'] }}</p>
-        </article>
+        <x-article
+            :title="$article['title']"
+            :description="$article['description']"
+        />
     @empty
         <p>Aucun article à afficher.</p>
     @endforelse
-
+@endsection
