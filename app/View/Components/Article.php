@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use Illuminate\Support\Str;
 
 class Article extends Component
 {
@@ -14,7 +15,6 @@ class Article extends Component
         $this->title = $title;
         $this->description = $description;
     }
-
 
     public function render()
     {
