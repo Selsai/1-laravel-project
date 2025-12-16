@@ -2,17 +2,21 @@
 
 namespace App\View\Components;
 
-use Closure;
-use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class Article extends Component
 {
-    public function __construct()
+    public string $title;
+    public string $description;
+
+    public function __construct(string $title, string $description)
     {
-        //
+        $this->title = $title;
+        $this->description = $description;
     }
-    public function render(): View|Closure|string
+
+
+    public function render()
     {
         return view('components.article');
     }
