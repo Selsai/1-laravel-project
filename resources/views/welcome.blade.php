@@ -13,10 +13,12 @@
             @break
         @endif
 
-        <x-article
-            :title="$article['title']"
-            :description="$article['description']"
-        />
+        <a href="{{ route('article.details', $article->id) }}" style="text-decoration: none; color: inherit;">
+            <x-article
+                :title="$article->title"
+                :description="$article->description"
+            />
+        </a>
     @empty
         <p>Aucun article à afficher.</p>
     @endforelse
